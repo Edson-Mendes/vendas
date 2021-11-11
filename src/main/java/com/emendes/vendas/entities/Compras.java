@@ -24,10 +24,15 @@ public class Compras {
   @JoinColumn(name = "cliente_id")
   private Cliente cliente;
 
-  public Compras(int id, Double totalCompra, LocalDate dataCompra){
+  public Compras(int id, Double totalCompra, LocalDate dataCompra, Cliente cliente){
     this.id = id;
     this.totalCompra = totalCompra;
     this.dataCompra = dataCompra;
+    this.cliente = cliente;
+  }
+
+  public Compras(int id){
+
   }
 
   public Compras(){}
@@ -54,6 +59,14 @@ public class Compras {
 
   public void setDataCompra(LocalDate dataCompra) {
     this.dataCompra = dataCompra;
+  }
+
+  public Cliente getCliente() {
+    return cliente;
+  }
+
+  public void setCliente(Cliente cliente) {
+    this.cliente = cliente;
   }
 
 }
